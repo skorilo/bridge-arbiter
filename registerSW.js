@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/bridge-arbiter/sw.js', { scope: '/bridge-arbiter/' })})}
