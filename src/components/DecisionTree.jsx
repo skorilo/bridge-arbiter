@@ -89,9 +89,9 @@ export default function DecisionTree({ rule, lang, onLangChange, t }) {
       )}
 
       {openRule && (
-        <RuleCard ruleNumber={openRule} lang={lang} t={t}
+        <RuleCard ruleRef={openRule} lang={lang} t={t}
           onClose={() => setOpenRule(null)}
-          onRuleClick={num => setOpenRule(num)} />
+          onRuleClick={ref => setOpenRule(ref)} />
       )}
     </div>
   )

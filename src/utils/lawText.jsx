@@ -9,13 +9,9 @@ export function formatText(text) {
 }
 
 // Matches "Regel(n) 12C1, 26B und 72C" or "Legea/Legile 29A, ..." in DE and RO
-const REF_RE = /\b(Regeln?|Leg(?:ea|ile|ii|ilor))\s+(\d+[A-Z]?\d*[a-z]?(?:\([a-z]\))?)((?:\s*(?:,\s*|\s+(?:und|und|și|şi|si)\s+)\d+[A-Z]?\d*[a-z]?(?:\([a-z]\))?)*)/g
+const REF_RE = /\b(Regeln?|Leg(?:ea|ile|ii|ilor))\s+(\d+[A-Z]?\d*[a-z]?(?:\([a-z]\))?)((?:\s*(?:,\s*|\s+(?:und|oder|sau|și|şi|si)\s+)\d+[A-Z]?\d*[a-z]?(?:\([a-z]\))?)*)/g
 
-const EXTRA_RE = /(\s*(?:,\s*|\s+(?:und|und|și|şi|si)\s+))(\d+[A-Z]?\d*[a-z]?(?:\([a-z]\))?)/g
-
-function baseNum(ref) {
-  return ref.match(/^\d+/)[0]
-}
+const EXTRA_RE = /(\s*(?:,\s*|\s+(?:und|oder|sau|și|şi|si)\s+))(\d+[A-Z]?\d*[a-z]?(?:\([a-z]\))?)/g
 
 const linkStyle = {
   display: 'inline',
@@ -48,7 +44,7 @@ export function renderWithLinks(text, onRuleClick) {
 
     parts.push(keyword + ' ')
     parts.push(
-      <button key={key++} style={linkStyle} onClick={() => onRuleClick(baseNum(firstRef))}>
+      <button key={key++} style={linkStyle} onClick={() => onRuleClick(firstRef)}>
         {firstRef}
       </button>
     )
@@ -60,7 +56,7 @@ export function renderWithLinks(text, onRuleClick) {
         const [, sep, ref] = sm
         parts.push(sep)
         parts.push(
-          <button key={key++} style={linkStyle} onClick={() => onRuleClick(baseNum(ref))}>
+          <button key={key++} style={linkStyle} onClick={() => onRuleClick(ref)}>
             {ref}
           </button>
         )

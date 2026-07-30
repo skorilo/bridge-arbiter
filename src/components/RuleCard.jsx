@@ -1,10 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { query } from '../db/database'
 import { formatText, renderWithLinks } from '../utils/lawText'
 
-export default function RuleCard({ ruleNumber, lang, t, onClose, onRuleClick }) {
+function parseRef(ref) {
+  const s = String(ref)
+  const num = s.match(/^\d+/)?.[0] || s
+  const section = s.slice(num.length).match(/^[A-Z]/)?.[0] || null
+  return { num, section }
+}
+
+export default function RuleCard({ ruleRef, lang, t, onClose, onRuleClick }) {
+  const { num: ruleNumber, section: anchor } = parseRef(ruleRef)
   const [rule, setRule] = useState(null)
   const [refs, setRefs] = useState([])
+  const anchorRef = useRef(null)
 
   useEffect(() => {
     const rows = query('SELECT * FROM rules WHERE number = ?', [ruleNumber])
@@ -15,30 +24,57 @@ export default function RuleCard({ ruleNumber, lang, t, onClose, onRuleClick }) 
     ))
   }, [ruleNumber])
 
+  useEffect(() => {
+    if (anchorRef.current) {
+      anchorRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [anchor, rule])
+
   const title = rule ? (rule[`title_${lang}`] || rule.title_de) : ''
-  const text = rule ? (rule[`text_${lang}`] || rule.text_de) : null
+  const rawText = rule ? (rule[`text_${lang}`] || rule.text_de) : null
+
+  function renderText(text) {
+    if (!text) return t.noText
+    const formatted = formatText(text)
+    const lines = formatted.split('\n')
+    const out = []
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i]
+      const sectionLetter = line.match(/^([A-H])\. /)?.[1]
+      const isTarget = anchor && sectionLetter === anchor
+      const content = renderWithLinks(line, onRuleClick)
+      if (isTarget) {
+        out.push(<span key={i} ref={anchorRef} style={styles.highlight}>{content}</span>)
+      } else {
+        out.push(<span key={i}>{content}</span>)
+      }
+      if (i < lines.length - 1) out.push('\n')
+    }
+    return out
+  }
 
   return (
     <div style={styles.overlay} onClick={onClose}>
       <div style={styles.sheet} onClick={e => e.stopPropagation()}>
         <button style={styles.close} onClick={onClose}>✕</button>
         <h2 style={styles.title}>
-          {lang === 'de' ? 'Regel' : lang === 'en' ? 'Law' : 'Legea'} {ruleNumber}
+          {lang === 'de' ? 'Regel' : 'Legea'} {ruleNumber}
+          {anchor && <span style={styles.anchorBadge}> ·{anchor}</span>}
         </h2>
         {title && <h3 style={styles.subtitle}>{title}</h3>}
 
         {rule ? (
           <>
-            <pre style={styles.text}>{renderWithLinks(formatText(text), onRuleClick) || t.noText}</pre>
+            <pre style={styles.text}>{renderText(rawText)}</pre>
             {refs.length > 0 && (
               <div style={styles.refSection}>
                 <span style={styles.refLabel}>{t.crossRefs}</span>
                 {refs.map(r => (
                   <div key={r.to_rule} style={styles.refRow}>
                     <strong>
-                      {lang === 'de' ? 'Regel' : lang === 'en' ? 'Law' : 'Legea'} {r.to_rule}
+                      {lang === 'de' ? 'Regel' : 'Legea'} {r.to_rule}
                     </strong>
-                    {r.context ? ` — ${r.context.split(' / ')[lang === 'de' ? 0 : lang === 'en' ? 1 : 2] || r.context}` : ''}
+                    {r.context ? ` — ${r.context.split(' / ')[lang === 'de' ? 0 : 1] || r.context}` : ''}
                   </div>
                 ))}
               </div>
@@ -85,6 +121,11 @@ const styles = {
     fontSize: 20,
     color: '#1a3a5c',
   },
+  anchorBadge: {
+    fontSize: 14,
+    color: '#888',
+    fontWeight: 400,
+  },
   subtitle: {
     margin: '0 0 12px',
     fontSize: 15,
@@ -99,6 +140,14 @@ const styles = {
     fontFamily: 'inherit',
     margin: '0 0 16px',
     textAlign: 'justify',
+  },
+  highlight: {
+    display: 'block',
+    background: '#fff8e1',
+    borderLeft: '3px solid #f59e0b',
+    paddingLeft: 8,
+    marginLeft: -8,
+    borderRadius: 2,
   },
   placeholder: {
     color: '#888',
