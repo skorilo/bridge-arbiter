@@ -3171,8 +3171,18 @@ dreapta atacului neregulamentar joacă o carte (dar vezi B), atacul rămâne val
 se aplică Legea 57.','apply_rule','[]');
 
 -- Law 54
-INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1209,'54',NULL,'Welcher Abschnitt ist anzuwenden?','Which section applies?','Care sectiune este aplicabila?',0);
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1210,'54',1209,'A. der Alleinspieler deckt sein Blatt auf','A. der Alleinspieler deckt sein Blatt auf','A. Declarantul își Etalează Mâna',1,'der Alleinspieler deckt sein Blatt auf
+INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1209,'54',NULL,'Wer versucht, das erste Ausspiel zu machen?','Wer versucht, das erste Ausspiel zu machen?','Cine încearcă să facă atacul inițial?',0);
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,question_de,question_en,question_ro,is_leaf) VALUES (1360,'54',1209,'ein Verteidiger','ein Verteidiger','un apărător','Hätte der Alleinspieler eine Karte des Strohmanns sehen können? (außer Karten, die während der Lizitation nach Regel 24 sichtbar wurden)','Hätte der Alleinspieler eine Karte des Strohmanns sehen können? (außer Karten, die während der Lizitation nach Regel 24 sichtbar wurden)','Ar fi putut declarantul să vadă vreo carte de la mort? (exceptând cărțile expuse la licitație sub Legea 24)',0);
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1212,'54',1360,'Ja','Ja','Da',1,'der Alleinspieler muss das Ausspiel annehmen
+Wenn der Alleinspieler irgendwelche Karten des Strohmanns (außer solche, die während des
+Lizits sichtbar geworden sind und Regel 24 unterliegen) gesehen haben könnte, muss er das
+Ausspiel annehmen, und der vermutete Alleinspieler wird zum Alleinspieler.','Declarantul Trebuie să Accepte Atacul
+
+Dacă este posibil ca declarantul să fi văzut orice carte de la mort (exceptând
+eventualele cărţi expuse de mort în timpul licitaţiei şi pentru care s-a aplicat Legea
+24), el trebuie să accepte atacul și presupusul declarant devine declarant.','apply_rule','["24"]');
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,question_de,question_en,question_ro,is_leaf) VALUES (1361,'54',1360,'Nein','Nein','Nu','Was möchte der Alleinspieler tun?','Was möchte der Alleinspieler tun?','Ce alege declarantul?',0);
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1210,'54',1361,'A. der Alleinspieler deckt sein Blatt auf','A. der Alleinspieler deckt sein Blatt auf','A. Declarantul își Etalează Mâna',1,'der Alleinspieler deckt sein Blatt auf
 Nach einem ersten Ausspiel außer der Reihe darf der Alleinspieler sein Blatt aufdecken; er
 wird zum Strohmann. Wenn der Alleinspieler beginnt, sein Blatt aufzudecken, und dabei eine
 oder mehrere Karten sichtbar werden, muss er sein ganzes Blatt aufdecken. Der Strohmann
@@ -3181,7 +3191,7 @@ wird zum Alleinspieler.','Declarantul își Etalează Mâna
 După un atac iniţial peste rând cu cartea pe faţă, declarantul poate să-şi etaleze
 mâna, devenind mort. Dacă declarantul începe să-şi etaleze mâna şi astfel expune
 una sau mai multe cărţi, el trebuie să-şi etaleze toată mâna. Mortul devine declarant.','apply_rule','[]');
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1211,'54',1209,'B. der Alleinspieler nimmt das Ausspiel an','B. der Alleinspieler nimmt das Ausspiel an','B. Declarantul Acceptă Atacul',1,'der Alleinspieler nimmt das Ausspiel an
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1211,'54',1361,'B. der Alleinspieler nimmt das Ausspiel an','B. der Alleinspieler nimmt das Ausspiel an','B. Declarantul Acceptă Atacul',1,'der Alleinspieler nimmt das Ausspiel an
 Nach einem ersten Ausspiel außer der Reihe darf der Alleinspieler das regelwidrige Ausspiel
 wie in Regel 53 beschrieben annehmen; der Strohmann wird im Einklang mit Regel 41
 aufgedeckt.
@@ -3199,27 +3209,27 @@ neregulamentar conform Legii 53, şi mortul se etalează conform Legii 41.
 17 Un atac peste rând la levata a treisprezecea trebuie retras.
 2. Dacă declarantul joacă a doua carte a levatei de la mort, aceasta nu poate fi
 
-retrasă decât pentru a corecta o renonsă.','apply_rule','[]');
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1212,'54',1209,'C. der Alleinspieler muss das Ausspiel annehmen','C. der Alleinspieler muss das Ausspiel annehmen','C. Declarantul Trebuie să Accepte Atacul',1,'der Alleinspieler muss das Ausspiel annehmen
-Wenn der Alleinspieler irgendwelche Karten des Strohmanns (außer solche, die während des
-Lizits sichtbar geworden sind und Regel 24 unterliegen) gesehen haben könnte, muss er das
-Ausspiel annehmen, und der vermutete Alleinspieler wird zum Alleinspieler.','Declarantul Trebuie să Accepte Atacul
-
-Dacă este posibil ca declarantul să fi văzut orice carte de la mort (exceptând
-eventualele cărţi expuse de mort în timpul licitaţiei şi pentru care s-a aplicat Legea
-24), el trebuie să accepte atacul și presupusul declarant devine declarant.','apply_rule','[]');
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1213,'54',1209,'D. der Alleinspieler lehnt das Ausspiel ab','D. der Alleinspieler lehnt das Ausspiel ab','D. Declarantul Refuză Atacul',1,'der Alleinspieler lehnt das Ausspiel ab
+retrasă decât pentru a corecta o renonsă.','apply_rule','["53","41"]');
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1213,'54',1361,'D. der Alleinspieler lehnt das Ausspiel ab','D. der Alleinspieler lehnt das Ausspiel ab','D. Declarantul Refuză Atacul',1,'der Alleinspieler lehnt das Ausspiel ab
 Der Alleinspieler kann verlangen, dass ein Gegenspieler sein aufgedecktes erstes Ausspiel
 außer der Reihe zurücknimmt. Die zurückgenommene Karte wird zur Strafkarte und Regel 50
 wird angewandt.','Declarantul Refuză Atacul
 
 Declarantul îi poate cere unui apărător să-şi retragă atacul iniţial peste rând făcut cu
-cartea pe faţă. Cartea retrasă devine carte penalizată majoră şi se aplică Legea 50D.','apply_rule','[]');
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1214,'54',1209,'E. erstes Ausspiel von der falschen Seite','E. erstes Ausspiel von der falschen Seite','E. Atac Inițial al Axei Greșite',1,'erstes Ausspiel von der falschen Seite
+cartea pe faţă. Cartea retrasă devine carte penalizată majoră şi se aplică Legea 50D.','apply_rule','["50D"]');
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1214,'54',1209,'der Alleinspieler oder der Strohmann','der Alleinspieler oder der Strohmann','declarantul sau mortul',1,'erstes Ausspiel von der falschen Seite
 Wenn ein Spieler der Seite des Alleinspielers zum ersten Stich auszuspielen versucht, wird
 Regel 24 angewandt.','Atac Inițial al Axei Greșite
 
-Dacă declarantul sau mortul încearcă să facă un atac iniţial, se aplică Legea 24.','apply_rule','[]');
+Dacă declarantul sau mortul încearcă să facă un atac iniţial, se aplică Legea 24.','apply_rule','["24"]');
+
+-- Cross-references (Law 54)
+INSERT INTO rule_refs (from_rule, to_rule, context) VALUES
+  ('54B', '53',  'Annahme des Ausspiels / Acceptance of the lead / Acceptarea atacului'),
+  ('54B', '41',  'Aufdecken des Strohmanns / Dummy exposed / Etalarea mortului'),
+  ('54C', '24',  'Sichtbare Karten während der Lizitation / Cards seen during bidding / Cărți văzute la licitație'),
+  ('54D', '50D', 'Strafkarte / Penalty card / Carte penalizată'),
+  ('54E', '24',  'Ausspiel von der falschen Seite / Lead from wrong side / Atac de la axa greșită');
 
 -- Law 55
 INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1215,'55',NULL,'Welcher Abschnitt ist anzuwenden?','Which section applies?','Care sectiune este aplicabila?',0);
@@ -5497,7 +5507,7 @@ Siehe Regel 12C2.','Calcularea Scorului în Jocul de Echipe
 Vezi Legea 86B2.','apply_rule','[]');
 
 -- Law 88
-INSERT INTO decision_nodes (id,rule_number,parent_id,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1343,'88',NULL,1,'','Vezi Legea 12C2.','apply_rule','[]');
+INSERT INTO decision_nodes (id,rule_number,parent_id,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1343,'88',NULL,1,'Siehe Regel 12C2.','Vezi Legea 12C2.','apply_rule','["12C2"]');
 
 -- Law 89
 INSERT INTO decision_nodes (id,rule_number,parent_id,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1344,'89',NULL,1,'Siehe Regel 12C3.','Vezi Legea 12C3.','apply_rule','[]');

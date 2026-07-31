@@ -74,7 +74,7 @@ export default function RuleCard({ ruleRef, lang, t, onClose, onRuleClick }) {
                     <strong>
                       {lang === 'de' ? 'Regel' : 'Legea'} {r.to_rule}
                     </strong>
-                    {r.context ? ` — ${r.context.split(' / ')[lang === 'de' ? 0 : 1] || r.context}` : ''}
+                    {r.context ? ` — ${r.context.split(' / ')[lang === 'de' ? 0 : lang === 'en' ? 1 : 2] || r.context}` : ''}
                   </div>
                 ))}
               </div>

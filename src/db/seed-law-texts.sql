@@ -6215,7 +6215,7 @@ Vezi Legea 86B2.'
 WHERE number = '87';
 
 UPDATE rules SET
-  text_de = '',
+  text_de = 'Siehe Regel 12C2.',
   text_ro = 'Vezi Legea 12C2.'
 WHERE number = '88';
 
