@@ -714,7 +714,7 @@ că informația ilicită a afectat rezultatul, arbitrul ajustează scorul [vezi 
 12C1b)] și poate penaliza un concurent vinovat.
 
 2 Această Lege se aplică în cazul în care există una sau mai multe mâini care conțin peste 13 cărți. Vezi Legea 14 pentru
-cazuri care implică un pachet de cărți incomplet.','apply_rule','[]');
+cazuri care implică un pachet de cărți incomplet.','apply_rule','["12C1(b)"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1043,'13',1041,'B. Während Lizitation oder Spiel bemerkt','B. Während Lizitation oder Spiel bemerkt','B. Descoperit în Timpul Licitației sau Jocului',1,'Während Lizitation oder Spiel bemerkt
 Wenn der Turnierleiter feststellt, dass das Blatt eines Spielers ursprünglich mehr als 13
 Karten umfasst hat, und das eines anderen entsprechend weniger, und ein Spieler mit einer
@@ -736,7 +736,7 @@ scor ajustat.
 
 2. Altfel, când s-a făcut o declaraţie cu un număr incorect de cărți, arbitrul acordă un
 
-scor ajustat [vezi Legea 12C1b)] şi poate penaliza un concurent vinovat.','apply_rule','[]');
+scor ajustat [vezi Legea 12C1b)] şi poate penaliza un concurent vinovat.','apply_rule','["12C1(b)"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1044,'13',1041,'C. Überzählige Karte','C. Überzählige Karte','C. Carte în Plus',1,'Überzählige Karte
 Jede überzählige Karte, die nicht zur Austeilung gehört, wird entfernt, sobald sie gefunden
 worden ist. Lizitation und Spiel werden ohne weitere Korrektur fortgesetzt. Ein Berichtigtes
@@ -758,7 +758,7 @@ sein). Über einen schuldigen Teilnehmer kann eine Ordnungsstrafe verhängt werd
 Când se constată după sfârşitul jocului că mâna unui jucător conţinea inițial mai mult
 de 13 cărţi, iar mâna altui jucător mai puţine, rezultatul trebuie anulat şi se acordă un
 scor ajustat (se poate aplica Legea 86B). Un concurent vinovat este pasibil de
-penalizare procedurală.','apply_rule','[]');
+penalizare procedurală.','apply_rule','["14", "86B"]');
 
 -- Law 14
 INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1046,'14',NULL,'Welcher Abschnitt ist anzuwenden?','Which section applies?','Care sectiune este aplicabila?',0);
@@ -821,7 +821,7 @@ cărţi. Pot fi necesare rectificări şi/sau penalizări (vezi B4 mai jos).
 
 4. Se consideră că o carte reîncadrată într-o mână în condiţiile Paragrafului B al
 acestei Legi a aparținut de la început mâinii incomplete. Ea poate deveni carte
-penalizată şi omisiunea de a o fi jucat poate constitui o renonsă.','apply_rule','[]');
+penalizată şi omisiunea de a o fi jucat poate constitui o renonsă.','apply_rule','["67", "14B"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1049,'14',1046,'C. Information vom Hinzufügen einer Karte','C. Information vom Hinzufügen einer Karte','C. Informația despre Reîncadrarea Cărții Lipsă',1,'Information vom Hinzufügen einer Karte
 Das Hinzufügen einer Karte ist für den Partner des Spielers, dessen Blatt eine falsche
 Kartenanzahl hatte, eine unerlaubte Information.','Informația despre Reîncadrarea Cărții Lipsă
@@ -1595,7 +1595,7 @@ face nicio înlocuire după terminarea perioadei de licitaţie (vezi Legea 17D).
 
 6. Dacă este permisă o înlocuire, adversarul din stânga îşi poate retrage orice
 declaraţie subsecventă declarației înlocuite. Informaţia din declaraţia retrasă este
-autorizată pentru axa sa și neautorizată pentru adversari.','apply_rule','[]');
+autorizată pentru axa sa și neautorizată pentru adversari.','apply_rule','["26", "17D"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1101,'25',1099,'B. Beabsichtigte Ansage','B. Beabsichtigte Ansage','B. Declarație Intenționată',1,'Beabsichtigte Ansage
 1. Eine Ersatzansage, die nicht nach Regel 25A zulässig ist, kann vom linken Gegner
 angenommen werden. (Sie ist angenommen, wenn er darüber absichtlich lizitiert.) Die erste
@@ -1616,7 +1616,7 @@ Legea 26).
 2. Exceptând cazul de la punctul B1, o înlocuire nepermisă de A este anulată.
 Declaraţia iniţială rămâne valabilă şi licitaţia continuă (se poate aplica Legea 26).
 
-3. Se aplică Legea 16C oricărei declarații retrase sau anulate.','apply_rule','[]');
+3. Se aplică Legea 16C oricărei declarații retrase sau anulate.','apply_rule','["25A", "26", "16C"]');
 
 -- Law 26
 INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1102,'26',NULL,'Welcher Abschnitt ist anzuwenden?','Which section applies?','Care sectiune este aplicabila?',0);
@@ -1658,7 +1658,7 @@ anzuwenden.','Anunț Insuficient Acceptat
 
 stânga jucătorului vinovat. El este acceptat dacă acest adversar declară.
 
-2. Dacă un jucător face un anunţ insuficient peste rând se aplică Legea 31.','apply_rule','[]');
+2. Dacă un jucător face un anunţ insuficient peste rând se aplică Legea 31.','apply_rule','["31"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1107,'27',1105,'B. nicht angenommen','B. nicht angenommen','B. Anunț Insuficient Neacceptat',1,'nicht angenommen
 Wird ein ungenügendes Gebot nicht angenommen (siehe Punkt A), muss es durch eine
 zulässige Ansage ersetzt werden (siehe aber unten Ziffer 3). Dann gilt:
@@ -1713,7 +1713,7 @@ atac din Legea 26B, şi vezi Legea 72C.
 
 4. Dacă jucătorul vinovat încearcă să-și înlocuiască anunţul insuficient cu un alt
 anunţ insuficient, arbitrul procedează ca la punctul 3 dacă adversarul din stânga
-nu acceptă noul anunţ insuficient conform paragrafului A1.','apply_rule','[]');
+nu acceptă noul anunţ insuficient conform paragrafului A1.','apply_rule','["26B", "16C", "23A", "72C", "27B1(b)", "27A", "27B3"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1108,'27',1105,'C. voreilige Ersatzansage','C. voreilige Ersatzansage','C. Înlocuire Prematură',1,'voreilige Ersatzansage
 Wenn der schuldige Spieler sein ungenügendes Gebot ersetzt, bevor der Turnierleiter eine
 Entscheidung getroffen hat, gilt die Ersatzansage, wenn sie zulässig ist und das ungenügende
@@ -1722,7 +1722,7 @@ Turnierleiter wendet die entsprechende Bestimmung dieser Regel auf die Ersatzans
 Dacă jucătorul vinovat își corectează anunţul insuficient înainte ca arbitrul să impună
 o rectificare, înlocuirea, când este legală, rămâne valabilă, mai puțin când anunţul
 insuficient este acceptat conform A1 (dar vezi B3 mai sus). Arbitrul aplică secţiunea
-relevantă a acestei legi declarației înlocuitoare.','apply_rule','[]');
+relevantă a acestei legi declarației înlocuitoare.','apply_rule','["27A"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1109,'27',1105,'D. nicht-schuldige Seite geschädigt','D. nicht-schuldige Seite geschädigt','D. Axa Nevinovată este Prejudiciată',1,'nicht-schuldige Seite geschädigt
 Wenn nach Anwendung von Regel 27B1 der Turnierleiter nach dem Spiel entscheidet, dass
 ohne die Hilfe des Regelverstoßes leicht ein anderes Ergebnis zustande gekommen wäre und
@@ -1734,7 +1734,7 @@ Dacă, după ce a aplicat B1, arbitrul apreciază la sfârşitul jocului că fă
 infracţiunii rezultatul donei ar putut în bună măsură să fie altul, şi prin urmare axa
 nevinovată este prejudiciată (vezi Legea 12B1), el va acorda un scor ajustat. În
 ajustare, arbitrul ar trebui să urmărească să recupereze pe cât posibil rezultatul
-probabil al donei în cazul în care anunțul insuficient nu s-ar fi produs.','apply_rule','[]');
+probabil al donei în cazul în care anunțul insuficient nu s-ar fi produs.','apply_rule','["27B1", "12B1"]');
 
 -- Law 28
 INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1110,'28',NULL,'Welcher Abschnitt ist anzuwenden?','Which section applies?','Care sectiune este aplicabila?',0);
@@ -1790,7 +1790,7 @@ Reihe ist anzusagen; Regel 72C kann anzuwenden sein.','La Rândul Adversarului d
 
 Dacă jucătorul vinovat pasează când era rândul adversarului său din dreapta,
 jucătorul vinovat trebuie să paseze la următorul său rând de a declara și se poate
-aplica Legea 72C.','apply_rule','[]');
+aplica Legea 72C.','apply_rule','["72C"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1119,'30',1117,'B. wenn der Partner oder der linke Gegner an der Reihe war anzusagen','B. wenn der Partner oder der linke Gegner an der Reihe war anzusagen','B. La Rândul Partenerului sau al Adversarului din Stânga',1,'wenn der Partner oder der linke Gegner an der Reihe war anzusagen
 1. Wenn der linke Gegner des schuldigen Spielers an der Reihe war anzusagen und der
 schuldige Spieler noch nicht lizitiert hat, oder wenn der Partner des schuldigen Spielers an der
@@ -1833,13 +1833,13 @@ declara. Se aplică Legile 16C, 26B și 72C.
 
 2. Dacă jucătorul vinovat a mai declarat în donă, un pas la rândul adversarului său
 
-din stânga este tratat ca o schimbare de declarație. Se aplică Legea 25.','apply_rule','[]');
+din stânga este tratat ca o schimbare de declarație. Se aplică Legea 25.','apply_rule','["16C2", "23A", "26B", "23C", "16C", "72C", "25"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1120,'30',1117,'C. künstlicher Pass','C. künstlicher Pass','C. Când Pas-ul Este Artificial',1,'künstlicher Pass
 Wenn ein Pass außer der Reihe künstlich ist, oder ein Pass einer künstlichen Ansage ist, ist
 nicht Regel 30, sondern Regel 31 anzuwenden.','Când Pas-ul Este Artificial
 
 Când un pas peste rând este artificial sau este pas al unei declaraţii artificiale a
-partenerului se aplică Legea 31, nu Legea 30.','apply_rule','[]');
+partenerului se aplică Legea 31, nu Legea 30.','apply_rule','["30", "31"]');
 
 -- Law 32
 INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1121,'32',NULL,'Welcher Abschnitt ist anzuwenden?','Which section applies?','Care sectiune este aplicabila?',0);
@@ -1880,7 +1880,7 @@ rectificare. Nu se aplică Legea 26B, dar vezi Legea 23C.
 8 O declarație ilegală a adversarului din dreapta este rectificată ca de obicei.
 b) Când declarația nu este comparabilă (vezi Legea 23A), partenerul jucătorului
 vinovat trebuie să paseze la următorul său rând de a declara. Se aplică Legile
-16C, 26B și 72C.','apply_rule','[]');
+16C, 26B și 72C.','apply_rule','["36", "23A", "26B", "23C", "16C", "72C"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1123,'32',1121,'B. Partner an der Reihe','B. Partner an der Reihe','B. La Rândul Partenerului',1,'Partner an der Reihe
 Wenn ein Spieler außer der Reihe kontriert oder rekontriert hat, während sein Partner an der
 Reihe war anzusagen, dann
@@ -1900,13 +1900,13 @@ Legea 16C2.
 
 2. Când îi vine rândul, jucătorul vinovat poate face orice declarație legală și arbitrul
 
-procedează ca la punctele A2a) sau A2b) de mai sus.','apply_rule','[]');
+procedează ca la punctele A2a) sau A2b) de mai sus.','apply_rule','["16C2"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1124,'32',1121,'C. linker Gegner an der Reihe','C. linker Gegner an der Reihe','C. Declarații Ulterioare la Rândul Adversarului din Stânga',1,'linker Gegner an der Reihe
 Spätere Ansagen, wenn der linke Gegner an der Reihe ist anzusagen, gelten als Änderung
 einer Ansage, auf die Regel 25 anzuwenden ist.','Declarații Ulterioare la Rândul Adversarului din Stânga
 
 Declarațiile ulterioare făcute la rândul adversarului din stânga sunt tratate ca
-schimbări de declarație și se aplică Legea 25.','apply_rule','[]');
+schimbări de declarație și se aplică Legea 25.','apply_rule','["25"]');
 
 -- Law 33
 INSERT INTO decision_nodes (id,rule_number,parent_id,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1125,'33',NULL,1,'Eine Ansage, die gleichzeitig mit der des Spielers, der an der Reihe war anzusagen, gemacht
@@ -2620,7 +2620,7 @@ carte legală înaintea schimbării desemnării, acest adversar poate să-şi re
 cartea astfel jucată, să o reaşeze în mână şi să o înlocuiască cu alta (vezi
 Legile 47D şi 16C1).
 
-5. O carte penalizată, majoră sau minoră, ar putea trebui jucată (vezi Legea 50).','apply_rule','[]');
+5. O carte penalizată, majoră sau minoră, ar putea trebui jucată (vezi Legea 50).','apply_rule','["45E", "47", "47D", "16C1", "50"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1175,'45',1171,'D. Strohmann nimmt eine nicht genannte Karte','D. Strohmann nimmt eine nicht genannte Karte','D. Mortul Joacă o Carte pe care Declarantul Nu a Cerut-o',1,'Strohmann nimmt eine nicht genannte Karte
 1. Wenn der Strohmann eine Karte, die der Alleinspieler nicht genannt hat, in die Position
 einer gespielten Karte legt, muss die Karte zurückgenommen werden, wenn die
@@ -2652,7 +2652,7 @@ mai sus), jocul continuă normal fără modificarea cărților jucate la aceast�
 sau la orice levată următoare. Când cartea jucată greșit a fost prima carte a
 levatei, jocul unei cărți de altă culoare în levata respectivă poate constitui o
 renonsă (vezi Legile 64A, 64B7 și 64C). Când cartea a fost jucată greșit la o
-levată deja începută și reprezintă o renonsă de la mort, vezi Legile 64B3 și 64C.','apply_rule','[]');
+levată deja începută și reprezintă o renonsă de la mort, vezi Legile 64B3 și 64C.','apply_rule','["16C", "64A", "64B7", "64C"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1176,'45',1171,'E. fünfte Karte eines Stichs','E. fünfte Karte eines Stichs','E. A Cincea Carte Jucată la o Levată',1,'fünfte Karte eines Stichs
 1. Eine fünfte Karte, die ein Gegenspieler zu einem Stich zugibt, wird eine Strafkarte und
 unterliegt Regel 50, wenn sie nicht nach dem Urteil des Turnierleiters ausgespielt worden ist
@@ -2668,7 +2668,7 @@ caz în care se aplică Legea 53 sau 56.
 
 2. Când declarantul furnizează o a cincea carte la o levată, din mână sau de la mort,
 aceasta este reîncadrată în mâna respectivă fără altă rectificare, mai puțin dacă
-arbitrul consideră că a fost atacată, caz în care se aplică Legea 55.','apply_rule','[]');
+arbitrul consideră că a fost atacată, caz în care se aplică Legea 55.','apply_rule','["50", "53", "56", "55"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1177,'45',1171,'F. Strohmann bezeichnet eine Karte','F. Strohmann bezeichnet eine Karte','F. Mortul Indică o Carte',1,'Strohmann bezeichnet eine Karte
 Nachdem das Blatt des Strohmanns aufgedeckt worden ist, darf der Strohmann ohne
 Anweisung des Alleinspielers keinesfalls eine Karte berühren oder bezeichnen (außer um sie
@@ -2968,7 +2968,7 @@ opţiuni, cartea respectivă nu mai este penalizată şi este reîncadrată în 
 b) Să nu ceară sau interzică un atac, caz în care apărătorul poate ataca orice
 carte și cartea penalizată rămâne pe masă drept carte penalizată14. Dacă este
 selectată această opţiune, Legea 50D continuă să se aplice atât timp cât
-cartea rămâne penalizată.','apply_rule','[]');
+cartea rămâne penalizată.','apply_rule','["49", "51", "50D"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1198,'50',1193,'E. Information aus einer Strafkarte','E. Information aus einer Strafkarte','E. Informația Provenită dintr-o Carte Penalizată',1,'Information aus einer Strafkarte
 1. Jede Information aus einer Strafkarte und die Verpflichtung, sie zu spielen, sind erlaubte
 Information für alle Spieler, solange die Strafkarte auf dem Tisch liegt.
@@ -3007,7 +3007,7 @@ a fost creată este neautorizată pentru partenerul jucătorului care a avut car
 ajutorul cărții expuse rezultatul donei ar fi putut în bună măsură să fie altul, și prin
 urmare axa nevinovată este prejudiciată (vezi Legea 12B1), el va acorda un scor
 ajustat. În ajustare, el ar trebui să urmărească să recupereze pe cât posibil
-rezultatul probabil al donei în lipsa efectului cărții sau cărților penalizate.','apply_rule','[]');
+rezultatul probabil al donei în lipsa efectului cărții sau cărților penalizate.','apply_rule','["50D2(a)", "16C", "59", "12B1"]');
 
 -- Law 51
 INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1199,'51',NULL,'Welcher Abschnitt ist anzuwenden?','Which section applies?','Care sectiune este aplicabila?',0);
@@ -3171,8 +3171,18 @@ dreapta atacului neregulamentar joacă o carte (dar vezi B), atacul rămâne val
 se aplică Legea 57.','apply_rule','[]');
 
 -- Law 54
-INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1209,'54',NULL,'Welcher Abschnitt ist anzuwenden?','Which section applies?','Care sectiune este aplicabila?',0);
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1210,'54',1209,'A. der Alleinspieler deckt sein Blatt auf','A. der Alleinspieler deckt sein Blatt auf','A. Declarantul își Etalează Mâna',1,'der Alleinspieler deckt sein Blatt auf
+INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1209,'54',NULL,'Wer versucht, das erste Ausspiel zu machen?','Wer versucht, das erste Ausspiel zu machen?','Cine încearcă să facă atacul inițial?',0);
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,question_de,question_en,question_ro,is_leaf) VALUES (1360,'54',1209,'ein Verteidiger','ein Verteidiger','un apărător','Hätte der Alleinspieler eine Karte des Strohmanns sehen können? (außer Karten, die während der Lizitation nach Regel 24 sichtbar wurden)','Hätte der Alleinspieler eine Karte des Strohmanns sehen können? (außer Karten, die während der Lizitation nach Regel 24 sichtbar wurden)','Ar fi putut declarantul să vadă vreo carte de la mort? (exceptând cărțile expuse la licitație sub Legea 24)',0);
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1212,'54',1360,'Ja','Ja','Da',1,'der Alleinspieler muss das Ausspiel annehmen
+Wenn der Alleinspieler irgendwelche Karten des Strohmanns (außer solche, die während des
+Lizits sichtbar geworden sind und Regel 24 unterliegen) gesehen haben könnte, muss er das
+Ausspiel annehmen, und der vermutete Alleinspieler wird zum Alleinspieler.','Declarantul Trebuie să Accepte Atacul
+
+Dacă este posibil ca declarantul să fi văzut orice carte de la mort (exceptând
+eventualele cărţi expuse de mort în timpul licitaţiei şi pentru care s-a aplicat Legea
+24), el trebuie să accepte atacul și presupusul declarant devine declarant.','apply_rule','["24"]');
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,question_de,question_en,question_ro,is_leaf) VALUES (1361,'54',1360,'Nein','Nein','Nu','Was möchte der Alleinspieler tun?','Was möchte der Alleinspieler tun?','Ce alege declarantul?',0);
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1210,'54',1361,'A. der Alleinspieler deckt sein Blatt auf','A. der Alleinspieler deckt sein Blatt auf','A. Declarantul își Etalează Mâna',1,'der Alleinspieler deckt sein Blatt auf
 Nach einem ersten Ausspiel außer der Reihe darf der Alleinspieler sein Blatt aufdecken; er
 wird zum Strohmann. Wenn der Alleinspieler beginnt, sein Blatt aufzudecken, und dabei eine
 oder mehrere Karten sichtbar werden, muss er sein ganzes Blatt aufdecken. Der Strohmann
@@ -3181,7 +3191,7 @@ wird zum Alleinspieler.','Declarantul își Etalează Mâna
 După un atac iniţial peste rând cu cartea pe faţă, declarantul poate să-şi etaleze
 mâna, devenind mort. Dacă declarantul începe să-şi etaleze mâna şi astfel expune
 una sau mai multe cărţi, el trebuie să-şi etaleze toată mâna. Mortul devine declarant.','apply_rule','[]');
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1211,'54',1209,'B. der Alleinspieler nimmt das Ausspiel an','B. der Alleinspieler nimmt das Ausspiel an','B. Declarantul Acceptă Atacul',1,'der Alleinspieler nimmt das Ausspiel an
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1211,'54',1361,'B. der Alleinspieler nimmt das Ausspiel an','B. der Alleinspieler nimmt das Ausspiel an','B. Declarantul Acceptă Atacul',1,'der Alleinspieler nimmt das Ausspiel an
 Nach einem ersten Ausspiel außer der Reihe darf der Alleinspieler das regelwidrige Ausspiel
 wie in Regel 53 beschrieben annehmen; der Strohmann wird im Einklang mit Regel 41
 aufgedeckt.
@@ -3199,27 +3209,27 @@ neregulamentar conform Legii 53, şi mortul se etalează conform Legii 41.
 17 Un atac peste rând la levata a treisprezecea trebuie retras.
 2. Dacă declarantul joacă a doua carte a levatei de la mort, aceasta nu poate fi
 
-retrasă decât pentru a corecta o renonsă.','apply_rule','[]');
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1212,'54',1209,'C. der Alleinspieler muss das Ausspiel annehmen','C. der Alleinspieler muss das Ausspiel annehmen','C. Declarantul Trebuie să Accepte Atacul',1,'der Alleinspieler muss das Ausspiel annehmen
-Wenn der Alleinspieler irgendwelche Karten des Strohmanns (außer solche, die während des
-Lizits sichtbar geworden sind und Regel 24 unterliegen) gesehen haben könnte, muss er das
-Ausspiel annehmen, und der vermutete Alleinspieler wird zum Alleinspieler.','Declarantul Trebuie să Accepte Atacul
-
-Dacă este posibil ca declarantul să fi văzut orice carte de la mort (exceptând
-eventualele cărţi expuse de mort în timpul licitaţiei şi pentru care s-a aplicat Legea
-24), el trebuie să accepte atacul și presupusul declarant devine declarant.','apply_rule','[]');
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1213,'54',1209,'D. der Alleinspieler lehnt das Ausspiel ab','D. der Alleinspieler lehnt das Ausspiel ab','D. Declarantul Refuză Atacul',1,'der Alleinspieler lehnt das Ausspiel ab
+retrasă decât pentru a corecta o renonsă.','apply_rule','["53","41"]');
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1213,'54',1361,'D. der Alleinspieler lehnt das Ausspiel ab','D. der Alleinspieler lehnt das Ausspiel ab','D. Declarantul Refuză Atacul',1,'der Alleinspieler lehnt das Ausspiel ab
 Der Alleinspieler kann verlangen, dass ein Gegenspieler sein aufgedecktes erstes Ausspiel
 außer der Reihe zurücknimmt. Die zurückgenommene Karte wird zur Strafkarte und Regel 50
 wird angewandt.','Declarantul Refuză Atacul
 
 Declarantul îi poate cere unui apărător să-şi retragă atacul iniţial peste rând făcut cu
-cartea pe faţă. Cartea retrasă devine carte penalizată majoră şi se aplică Legea 50D.','apply_rule','[]');
-INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1214,'54',1209,'E. erstes Ausspiel von der falschen Seite','E. erstes Ausspiel von der falschen Seite','E. Atac Inițial al Axei Greșite',1,'erstes Ausspiel von der falschen Seite
+cartea pe faţă. Cartea retrasă devine carte penalizată majoră şi se aplică Legea 50D.','apply_rule','["50D"]');
+INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1214,'54',1209,'der Alleinspieler oder der Strohmann','der Alleinspieler oder der Strohmann','declarantul sau mortul',1,'erstes Ausspiel von der falschen Seite
 Wenn ein Spieler der Seite des Alleinspielers zum ersten Stich auszuspielen versucht, wird
 Regel 24 angewandt.','Atac Inițial al Axei Greșite
 
-Dacă declarantul sau mortul încearcă să facă un atac iniţial, se aplică Legea 24.','apply_rule','[]');
+Dacă declarantul sau mortul încearcă să facă un atac iniţial, se aplică Legea 24.','apply_rule','["24"]');
+
+-- Cross-references (Law 54)
+INSERT INTO rule_refs (from_rule, to_rule, context) VALUES
+  ('54B', '53',  'Annahme des Ausspiels / Acceptance of the lead / Acceptarea atacului'),
+  ('54B', '41',  'Aufdecken des Strohmanns / Dummy exposed / Etalarea mortului'),
+  ('54C', '24',  'Sichtbare Karten während der Lizitation / Cards seen during bidding / Cărți văzute la licitație'),
+  ('54D', '50D', 'Strafkarte / Penalty card / Carte penalizată'),
+  ('54E', '24',  'Ausspiel von der falschen Seite / Lead from wrong side / Atac de la axa greșită');
 
 -- Law 55
 INSERT INTO decision_nodes (id,rule_number,parent_id,question_de,question_en,question_ro,is_leaf) VALUES (1215,'55',NULL,'Welcher Abschnitt ist anzuwenden?','Which section applies?','Care sectiune este aplicabila?',0);
@@ -3661,7 +3671,7 @@ axei nevinovate a făcut o declarație în dona următoare.
 
 7. Ambele axe au făcut renonsă în aceeași donă și ambele renonse s-au consumat.
 
-8. Renonsa a fost corectată conform Legii 62C3.','apply_rule','[]');
+8. Renonsa a fost corectată conform Legii 62C3.','apply_rule','["64C", "62C3"]');
 INSERT INTO decision_nodes (id,rule_number,parent_id,answer_label_de,answer_label_en,answer_label_ro,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1250,'64',1247,'C. Entschädigung','C. Entschädigung','C. Repararea Prejudiciului',1,'Entschädigung
 1. Wenn nach dem Urteil des Turnierleiters nach einer etablierten Revoke, einschließlich
 solcher, für die es keinen automatischen Stichtransfer gibt, die nicht-schuldige Seite durch
@@ -5497,7 +5507,7 @@ Siehe Regel 12C2.','Calcularea Scorului în Jocul de Echipe
 Vezi Legea 86B2.','apply_rule','[]');
 
 -- Law 88
-INSERT INTO decision_nodes (id,rule_number,parent_id,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1343,'88',NULL,1,'','Vezi Legea 12C2.','apply_rule','[]');
+INSERT INTO decision_nodes (id,rule_number,parent_id,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1343,'88',NULL,1,'Siehe Regel 12C2.','Vezi Legea 12C2.','apply_rule','["12C2"]');
 
 -- Law 89
 INSERT INTO decision_nodes (id,rule_number,parent_id,is_leaf,outcome_de,outcome_ro,outcome_type,referenced_rules) VALUES (1344,'89',NULL,1,'Siehe Regel 12C3.','Vezi Legea 12C3.','apply_rule','[]');
@@ -8995,3 +9005,70 @@ Definiții
 
 Definiții
 77','apply_rule','[]');
+
+
+-- Cross-references for the red (critical) laws: 13, 14, 25, 27, 30, 32, 45, 50, 64
+-- (31 and 54 already have their own cross-refs above / in seed-rule31.sql)
+INSERT INTO rule_refs (from_rule, to_rule, context) VALUES
+  ('13A', '12C1(b)', 'Berichtigtes Ergebnis / Adjusted score / Scor ajustat'),
+  ('13B', '12C1(b)', 'Berichtigtes Ergebnis / Adjusted score / Scor ajustat'),
+  ('13D', '14', 'Zu wenige Karten im Kartenpaket / Fewer than 13 cards in a hand / Prea puține cărți într-o mână'),
+  ('13D', '86B', 'Teamturnier / Team event / Turneu pe echipe'),
+  ('14B', '67', 'Revoke-Berichtigung / Revoke rectification / Corectarea unei renonse'),
+  ('14B', '14B', 'Später bemerkter Kartenmangel / Deficiency noticed later / Lipsă de cărți observată ulterior'),
+  ('25A', '26', 'Ausspielbeschränkung / Lead restriction / Restricție de atac'),
+  ('25A', '17D', 'Ende der Klärungsphase / End of the clarification period / Sfârșitul perioadei de clarificare'),
+  ('25B', '25A', 'Unbeabsichtigte Ansage / Unintended call / Anunț neintenționat'),
+  ('25B', '26', 'Ausspielbeschränkung / Lead restriction / Restricție de atac'),
+  ('25B', '16C', 'Spielfremde Information / Extraneous information / Informații neautorizate'),
+  ('27A', '31', 'Gebot außer der Reihe / Bid out of rotation / Anunț peste rând'),
+  ('27B', '26B', 'Ausspielbeschränkung / Lead restriction / Restricție de atac'),
+  ('27B', '16C', 'Spielfremde Information / Extraneous information / Informații neautorizate'),
+  ('27B', '23A', 'Vergleichbare Ansage / Comparable call / Declarație comparabilă'),
+  ('27B', '72C', 'Ergebnisberichtigung / Score adjustment / Ajustarea scorului'),
+  ('27B', '27B1(b)', 'Ersatz durch vergleichbare Ansage / Replacement by comparable call / Înlocuire printr-o declarație comparabilă'),
+  ('27B', '27A', 'Angenommenes ungenügendes Gebot / Accepted insufficient bid / Anunț insuficient acceptat'),
+  ('27B', '27B3', 'Kontra/Rekontra bei ungenügendem Gebot / Double/redouble on insufficient bid / Contra/recontra la anunț insuficient'),
+  ('27C', '27A', 'Angenommenes ungenügendes Gebot / Accepted insufficient bid / Anunț insuficient acceptat'),
+  ('27D', '27B1', 'Ersatzansage nach ungenügendem Gebot / Replacement call after insufficient bid / Declarație de înlocuire după anunț insuficient'),
+  ('27D', '12B1', 'Schaden für nicht-schuldige Seite / Damage to non-offending side / Prejudiciu adus părții nevinovate'),
+  ('30A', '72C', 'Ergebnisberichtigung / Score adjustment / Ajustarea scorului'),
+  ('30B', '16C2', 'Erlaubte Information für den Partner / Authorized information for partner / Informație autorizată pentru partener'),
+  ('30B', '23A', 'Vergleichbare Ansage / Comparable call / Declarație comparabilă'),
+  ('30B', '26B', 'Ausspielbeschränkung / Lead restriction / Restricție de atac'),
+  ('30B', '23C', 'Folgen einer nicht vergleichbaren Ansage / Consequences of a non-comparable call / Consecințele unei declarații necomparabile'),
+  ('30B', '16C', 'Spielfremde Information / Extraneous information / Informații neautorizate'),
+  ('30B', '72C', 'Ergebnisberichtigung / Score adjustment / Ajustarea scorului'),
+  ('30B', '25', 'Ansageänderung / Change of call / Schimbarea declarației'),
+  ('30C', '30', 'Pass außer der Reihe / Pass out of rotation / Pas peste rând'),
+  ('30C', '31', 'Gebot außer der Reihe / Bid out of rotation / Anunț peste rând'),
+  ('32A', '36', 'Unzulässiges Kontra oder Rekontra / Inadmissible double or redouble / Contra sau recontra inadmisibil'),
+  ('32A', '23A', 'Vergleichbare Ansage / Comparable call / Declarație comparabilă'),
+  ('32A', '26B', 'Ausspielbeschränkung / Lead restriction / Restricție de atac'),
+  ('32A', '23C', 'Folgen einer nicht vergleichbaren Ansage / Consequences of a non-comparable call / Consecințele unei declarații necomparabile'),
+  ('32A', '16C', 'Spielfremde Information / Extraneous information / Informații neautorizate'),
+  ('32A', '72C', 'Ergebnisberichtigung / Score adjustment / Ajustarea scorului'),
+  ('32B', '16C2', 'Erlaubte Information für den Partner / Authorized information for partner / Informație autorizată pentru partener'),
+  ('32C', '25', 'Ansageänderung / Change of call / Schimbarea declarației'),
+  ('45C', '45E', 'Fünfte Karte eines Stichs / Fifth card to a trick / A cincea carte la o levată'),
+  ('45C', '47', 'Zurücknahme einer bezeichneten Karte / Withdrawal of a designated card / Retragerea unei cărți desemnate'),
+  ('45C', '47D', 'Karte zulässig zurückgenommen / Card legitimately withdrawn / Carte retrasă legitim'),
+  ('45C', '16C1', 'Spielfremde Information, Option des Gegners / Extraneous info, opponent''s option / Informație neautorizată, opțiunea adversarului'),
+  ('45C', '50', 'Strafkarte / Penalty card / Carte penalizată'),
+  ('45D', '16C', 'Spielfremde Information / Extraneous information / Informații neautorizate'),
+  ('45D', '64A', 'Automatischer Stichtransfer / Automatic trick transfer / Transfer automat de levată'),
+  ('45D', '64B7', 'Kein automatischer Transfer, Sonderfall / No automatic transfer, special case / Fără transfer automat, caz special'),
+  ('45D', '64C', 'Entschädigung / Compensation / Despăgubire'),
+  ('45E', '50', 'Strafkarte / Penalty card / Carte penalizată'),
+  ('45E', '53', 'Erstes Ausspiel außer der Reihe, verdeckt / Lead out of rotation, unfaced / Atac inițial peste rând, cu cartea pe spate'),
+  ('45E', '56', 'Ausspiel oder Zugabe akzeptiert / Lead or play accepted / Atac sau joc acceptat'),
+  ('45E', '55', 'Ausspiel des Alleinspielers außer der Reihe / Declarer''s lead out of turn / Atacul declarantului peste rând'),
+  ('50D', '49', 'Vorzeitiges Ausspiel / Premature lead / Atac prematur'),
+  ('50D', '51', 'Mehr als eine Strafkarte / More than one penalty card / Mai multe cărți penalizate'),
+  ('50D', '50D', 'Vorgehen bei großer Strafkarte / Procedure for a major penalty card / Procedura la o carte penalizată majoră'),
+  ('50E', '50D2(a)', 'Verzicht auf Verlangen/Verbot der Farbe / Declining to require or forbid the suit / Renunțarea la a cere/interzice culoarea'),
+  ('50E', '16C', 'Spielfremde Information / Extraneous information / Informații neautorizate'),
+  ('50E', '59', 'Ausspiel nicht wie verlangt möglich / Required lead not possible / Atacul cerut nu este posibil'),
+  ('50E', '12B1', 'Schaden für nicht-schuldige Seite / Damage to non-offending side / Prejudiciu adus părții nevinovate'),
+  ('64B', '64C', 'Entschädigung / Compensation / Despăgubire'),
+  ('64B', '62C3', 'Berichtigung einer Revoke / Correcting a revoke / Corectarea unei renonse');
