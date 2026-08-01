@@ -8,10 +8,22 @@ export function formatText(text) {
     .trim()
 }
 
-// Matches "Regel(n) 12C1, 26B und 72C" or "Legea/Legile 29A, ..." in DE and RO
-const REF_RE = /\b(Regeln?|Leg(?:ea|ile|ii|ilor))\s+(\d+[A-Z]?\d*[a-z]?(?:\([a-z]\))?)((?:\s*(?:,\s*|\s+(?:und|oder|sau|și|şi|si)\s+)\d+[A-Z]?\d*[a-z]?(?:\([a-z]\))?)*)/g
+// Matches "Regel(n) 12C1, 26B und 72C" or "Legea/Legile 29A, ..." in DE and RO.
+// Sub-point suffixes appear in two conventions across the source translations:
+// parenthesized ("27B1(b)(i)", German) and bare-trailing-paren ("27B1b), 30B1b)i",
+// Romanian) — REF_NUM accepts up to two suffix levels in either style so a citation
+// doesn't get truncated mid-list (a bare ")" with no matching "(" used to break the
+// separator match for every citation after it).
+const REF_NUM = String.raw`\d+[A-Z]?\d*(?:\(?[a-z]{1,3}\)?){0,2}`
+const REF_RE = new RegExp(
+  String.raw`\b(Regeln?|Leg(?:ea|ile|ii|ilor))\s+(${REF_NUM})((?:\s*(?:,\s*|\s+(?:und|oder|sau|și|şi|si)\s+)${REF_NUM})*)`,
+  'g'
+)
 
-const EXTRA_RE = /(\s*(?:,\s*|\s+(?:und|oder|sau|și|şi|si)\s+))(\d+[A-Z]?\d*[a-z]?(?:\([a-z]\))?)/g
+const EXTRA_RE = new RegExp(
+  String.raw`(\s*(?:,\s*|\s+(?:und|oder|sau|și|şi|si)\s+))(${REF_NUM})`,
+  'g'
+)
 
 const linkStyle = {
   display: 'inline',
