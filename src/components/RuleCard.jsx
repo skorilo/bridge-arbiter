@@ -71,9 +71,9 @@ export default function RuleCard({ ruleRef, lang, t, onClose, onRuleClick }) {
                 <span style={styles.refLabel}>{t.crossRefs}</span>
                 {refs.map(r => (
                   <div key={r.to_rule} style={styles.refRow}>
-                    <strong>
+                    <button style={styles.refLink} onClick={() => onRuleClick(r.to_rule)}>
                       {lang === 'de' ? 'Regel' : 'Legea'} {r.to_rule}
-                    </strong>
+                    </button>
                     {r.context ? ` — ${r.context.split(' / ')[lang === 'de' ? 0 : lang === 'en' ? 1 : 2] || r.context}` : ''}
                   </div>
                 ))}
@@ -171,5 +171,18 @@ const styles = {
     fontSize: 14,
     color: '#333',
     padding: '4px 0',
+  },
+  refLink: {
+    display: 'inline',
+    background: 'none',
+    border: 'none',
+    padding: 0,
+    margin: 0,
+    color: '#1565c0',
+    fontWeight: 700,
+    fontSize: 'inherit',
+    font: 'inherit',
+    fontFamily: 'inherit',
+    cursor: 'pointer',
   },
 }
