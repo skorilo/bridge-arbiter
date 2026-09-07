@@ -54,17 +54,23 @@ export const TYPE_LABELS = {
     no_correction: { label: 'Keine weitere Korrektur', color: '#27ae60' },
     partner_must_pass: { label: 'Partner muss passen', color: '#c0392b' },
     apply_rule: { label: 'Regel anwenden', color: '#2980b9' },
+    restriction: { label: 'Spielbeschränkung', color: '#8e44ad' },
+    info: { label: 'Zur Information', color: '#7f8c8d' },
   },
   en: {
     repeat_bid: { label: 'Repeat the call', color: '#e67e22' },
     no_correction: { label: 'No further rectification', color: '#27ae60' },
     partner_must_pass: { label: 'Partner must pass', color: '#c0392b' },
     apply_rule: { label: 'Apply law', color: '#2980b9' },
+    restriction: { label: 'Play restriction', color: '#8e44ad' },
+    info: { label: 'For information', color: '#7f8c8d' },
   },
   ro: {
     repeat_bid: { label: 'Repetă declarația', color: '#e67e22' },
     no_correction: { label: 'Nicio altă rectificare', color: '#27ae60' },
     partner_must_pass: { label: 'Partenerul trebuie să paseze', color: '#c0392b' },
     apply_rule: { label: 'Aplică legea', color: '#2980b9' },
+    restriction: { label: 'Restricție de joc', color: '#8e44ad' },
+    info: { label: 'Informativ', color: '#7f8c8d' },
   },
 }

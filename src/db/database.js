@@ -22,19 +22,25 @@ async function _initDB() {
 
   db = new SQL.Database()
 
-  const [schema, seedRule31, seedAllLaws, seedTexts, seedTrees] = await Promise.all([
-    fetch(`${base}schema.sql`).then(r => r.text()),
-    fetch(`${base}seed-rule31.sql`).then(r => r.text()),
-    fetch(`${base}seed-all-laws.sql`).then(r => r.text()),
-    fetch(`${base}seed-law-texts.sql`).then(r => r.text()),
-    fetch(`${base}seed-trees-all.sql`).then(r => r.text()),
-  ])
+  const [schema, seedRule31, seedAllLaws, seedTexts, seedTrees, seedTreesRed] =
+    await Promise.all([
+      fetch(`${base}schema.sql`).then(r => r.text()),
+      fetch(`${base}seed-rule31.sql`).then(r => r.text()),
+      fetch(`${base}seed-all-laws.sql`).then(r => r.text()),
+      fetch(`${base}seed-law-texts.sql`).then(r => r.text()),
+      fetch(`${base}seed-trees-all.sql`).then(r => r.text()),
+      fetch(`${base}seed-trees-red.sql`).then(r => r.text()),
+    ])
 
   db.run(schema)
   db.run(seedRule31)
   db.run(seedAllLaws)
   db.run(seedTexts)
   db.run(seedTrees)
+  // Ultimul: sterge si reinsereaza arborii legilor rosii (2,13,14,25,27,30,
+  // 32,45,50,54,64). Trebuie sa ruleze DUPA seed-trees-all.sql, altfel
+  // DELETE-ul din el nu are ce sterge si INSERT-urile intra in coliziune.
+  db.run(seedTreesRed)
 
   return db
 }
